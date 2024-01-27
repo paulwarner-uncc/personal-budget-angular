@@ -3,7 +3,8 @@
 }
 
 body {
-    font-size: 10px;
+    /* This is an SEO change */
+    font-size: 12px;
     font-family: Tahoma, Arial;
 }
 
@@ -60,7 +61,8 @@ div.hero h1 {
 }
 
 div.hero h2 {
-    color: #4d5791;
+    /* This is an a11y change */
+    color: #454e82;
 }
 
 main {
@@ -70,7 +72,14 @@ main {
 
 .page-area {
     max-width: 768px;
-    display: inline-block;
+    /* display: inline-block; */
+
+    /* Extra changes made by Paul Warner */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
 }
 
 footer {
@@ -106,4 +115,17 @@ main article {
     main article {
         margin: 10px;
     }
+}
+
+/* Extra changes made by Paul Warner */
+.aside-container {
+    display: flex;
+    flex-direction: row;
+}
+
+aside {
+    width: 25%;
+    border-left: 4px solid black;
+    display: inline-block;
+    padding: 1em;
 }

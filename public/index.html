@@ -4,104 +4,164 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Budget</title>
-    <meta name="description" content="A free personal budger app">
+    <meta name="description" content="A free personal budget app">
     <meta name="keywords" content="app free budget finance">
     <link rel="stylesheet" href="reset.css">
+
+    <!-- This is an SEO change -->
+    <!-- Per PageSpeed Insights, font sizes less than 12 impact SEO on mobile devices -->
+    <!-- https://pagespeed.web.dev/analysis/http-147-182-164-210-pb-public/9qamybm4ep?form_factor=mobile -->
+    <!-- This is an a11y change -->
+    <!-- The original contrast ratio between the h2 element and the background was too low -->
     <link rel="stylesheet" href="main.css">
+
+    <!-- This is an SEO change -->
+    <!-- Added Open Graph meta tags for social media previews -->
+    <!-- Based on https://css-tricks.com/essential-meta-tags-social-media/ -->
+    <meta property="og:title" content="Personal Budget">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://147.182.164.210/pb/public/">
+    <meta property="og:image" content="http://147.182.164.210/pb/public/bg.png">
 </head>
 <body>
 
-<a href="#main" class="skip">Skip to content</a>
+    <a href="#main" class="skip">Skip to content</a>
 
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about.html">About</a></li>
-            <li><a href="/login.html">Login</a></li>
-            <li><a href="https://google.com">Google</a></li>
-        </ul>
-    </nav>
+    <!-- This is a semantic HTML change -->
+    <!-- Moved nav and title into a header element -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/pb/public/">Home</a></li>
+                <li><a href="/pb/public/about.html">About</a></li>
+                <li><a href="/pb/public/login.html">Login</a></li>
+                <li><a href="https://google.com">Google</a></li>
+            </ul>
+        </nav>
 
-    <div class="hero">
-        <h1>Personal Budget</h1>
-        <h2>A personal-budget management app</h2>
-    </div>
-
-    <main class="center" id="main">
-
-        <div class="page-area">
-
-            <article>
-                <h1>Stay on track</h1>
-                <p>
-                    Do you know where you are spending your money? If you really stop to track it down,
-                    you would get surprised! Proper budget management depends on real data... and this
-                    app will help you with that!
-                </p>
-            </article>
-    
-            <article>
-                <h1>Alerts</h1>
-                <p>
-                    What if your clothing budget ended? You will get an alert. The goal is to never go over the budget.
-                </p>
-            </article>
-    
-            <article>
-                <h1>Results</h1>
-                <p>
-                    People who stick to a financial plan, budgeting every expense, get out of debt faster!
-                    Also, they to live happier lives... since they expend without guilt or fear... 
-                    because they know it is all good and accounted for.
-                </p>
-            </article>
-    
-            <article>
-                <h1>Free</h1>
-                <p>
-                    This app is free!!! And you are the only one holding your data!
-                </p>
-            </article>
-    
-            <article>
-                <h1>Stay on track</h1>
-                <p>
-                    Do you know where you are spending your money? If you really stop to track it down,
-                    you would get surprised! Proper budget management depends on real data... and this
-                    app will help you with that!
-                </p>
-            </article>
-    
-            <article>
-                <h1>Alerts</h1>
-                <p>
-                    What if your clothing budget ended? You will get an alert. The goal is to never go over the budget.
-                </p>
-            </article>
-    
-            <article>
-                <h1>Results</h1>
-                <p>
-                    People who stick to a financial plan, budgeting every expense, get out of debt faster!
-                    Also, they to live happier lives... since they expend without guilt or fear... 
-                    because they know it is all good and accounted for.
-                </p>
-            </article>
-    
-            <article>
-                <h1>Chart</h1>
-                <p>
-                    <canvas id="myChart" width="400" height="400"></canvas>
-                </p>
-            </article>
-
+        <!-- This is an a11y change -->
+        <!-- Added alt text to the background image -->
+        <!-- Based on this Stack Overflow post, aria-label can be used instead of an img tag -->
+        <!-- https://stackoverflow.com/a/31086818 -->
+        <div class="hero" aria-label="A phone and a tablet displaying a bar chart and a line graph, respectively.">
+            <h1>Personal Budget</h1>
+            <h2>A personal-budget management app</h2>
         </div>
+    </header>
 
-    </main>
+    <div class="aside-container">
+        <main class="center" id="main">
+
+            <div class="page-area">
+    
+                <!-- This is an SEO change -->
+                <!-- Applied schemas to articles -->
+                <article itemscope itemtype="https://schema.org/Article">
+                    <h1 itemprop="name">Stay on track</h1>
+                    <p itemprop="description">
+                        Do you know where you are spending your money? If you really stop to track it down,
+                        you would get surprised! Proper budget management depends on real data... and this
+                        app will help you with that!
+                    </p>
+                </article>
+    
+                <article itemscope itemtype="https://schema.org/Article">
+                    <h1 itemprop="name">Alerts</h1>
+                    <p itemprop="description">
+                        What if your clothing budget ended? You will get an alert. The goal is to never go over the budget.
+                    </p>
+                </article>
+    
+                <article itemscope itemtype="https://schema.org/Article">
+                    <h1 itemprop="name">Results</h1>
+                    <p itemprop="description">
+                        People who stick to a financial plan, budgeting every expense, get out of debt faster!
+                        Also, they to live happier lives... since they expend without guilt or fear...
+                        because they know it is all good and accounted for.
+                    </p>
+                </article>
+    
+                <article itemscope itemtype="https://schema.org/Article">
+                    <h1 itemprop="name">Free</h1>
+                    <p itemprop="description">
+                        This app is free!!! And you are the only one holding your data!
+                    </p>
+                </article>
+    
+                <article itemscope itemtype="https://schema.org/Article">
+                    <h1 itemprop="name">Stay on track</h1>
+                    <p itemprop="description">
+                        Do you know where you are spending your money? If you really stop to track it down,
+                        you would get surprised! Proper budget management depends on real data... and this
+                        app will help you with that!
+                    </p>
+                </article>
+    
+                <article itemscope itemtype="https://schema.org/Article">
+                    <h1 itemprop="name">Alerts</h1>
+                    <p itemprop="description">
+                        What if your clothing budget ended? You will get an alert. The goal is to never go over the budget.
+                    </p>
+                </article>
+    
+                <article itemscope itemtype="https://schema.org/Article">
+                    <h1 itemprop="name">Results</h1>
+                    <p itemprop="description">
+                        People who stick to a financial plan, budgeting every expense, get out of debt faster!
+                        Also, they to live happier lives... since they expend without guilt or fear...
+                        because they know it is all good and accounted for.
+                    </p>
+                </article>
+    
+                <article itemscope itemtype="https://schema.org/Article">
+                    <h1 itemprop="name">Chart</h1>
+                    <p itemprop="description">
+                        <!-- This is an a11y change -->
+                        <!-- If this chart worked, it would be important to provide alt text -->
+                        <canvas id="myChart" width="400" height="400" aria-describedby="myChartAlt"></canvas>
+                        <p id="myChartAlt">A very important chart that shows very important things.</p>
+                    </p>
+                </article>
+    
+            </div>
+        </main>
+
+        <!-- This is a semantic HTML change -->
+        <!-- This is a sidebar on the page -->
+        <aside>
+            <h1>Testimonials</h1>
+
+            <!-- This is an SEO change -->
+            <!-- Applied a Review schema to testimonials -->
+            <article itemscope itemtype="https://schema.org/Review">
+                <h2 itemprop="author">Bob Jones</h2>
+                <p itemprop="reviewBody">
+                    <!-- This is a semantic HTML change -->
+                    <!-- The mark element denotes the review score -->
+                    <mark itemprop="reviewRating">5/5</mark> This app single-handedly saved me
+                    from bankruptcy!
+                </p>
+            </article>
+
+            <article itemscope itemtype="https://schema.org/Review">
+                <h2 itemprop="author">Dr. Roberts</h2>
+                <p itemprop="reviewBody">
+                    <mark itemprop="reviewRating">7/5</mark> Definitely not malware!
+                </p>
+            </article>
+
+            <article itemscope itemtype="https://schema.org/Review">
+                <h2 itemprop="author">Sally Webster</h2>
+                <p itemprop="reviewBody">
+                    <mark itemprop="reviewRating">3/5</mark> A perfectly adequate budgeting app.
+                </p>
+            </article>
+        </aside>
+    </div>
 
     <footer class="bottom">
         <div class="center">
-            All rights reserved &copy; Fabio Nolasco
+            All rights reserved &copy; Paul Warner
         </div>
     </footer>
 
