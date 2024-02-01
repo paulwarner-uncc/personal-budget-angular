@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fabionolasco/personal-budget.git"
+    "url": "git+https://github.com/paulwarner-uncc/personal-budget.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/fabionolasco/personal-budget/issues"
+    "url": "https://github.com/paulwarner-uncc/personal-budget/issues"
   },
-  "homepage": "https://github.com/fabionolasco/personal-budget#readme",
+  "homepage": "https://github.com/paulwarner-uncc/personal-budget#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1"

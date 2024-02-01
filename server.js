@@ -24,6 +24,7 @@ const budget = {
     ]
 };
 
+app.use('/', express.static('public'));
 
 app.get('/budget', (req, res) => {
     res.json(budget);
