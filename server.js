@@ -25,8 +25,6 @@ const budget = {
     ]
 };
 
-app.use('/', express.static('public'));
-
 app.get('/budget', (req, res) => {
     // Based on https://stackoverflow.com/a/51655919
     // Set the correct content type header for JSON
