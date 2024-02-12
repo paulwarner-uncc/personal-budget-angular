@@ -37,7 +37,6 @@ axios.get('http://localhost:3000/budget')
         .domain(dataSource.labels)
         .range(dataSource.datasets[0].backgroundColor);
 
-
     createChart();
     createCoolerChart(res.data.myBudget, color);
 });
@@ -97,22 +96,35 @@ function createCoolerChart(data, color) {
     // Fill each pie wedge with the correct color
     slice.enter()
         .insert("path")
-        .style("fill", function(d) { return color(d.data.title); })
+        .style("fill", function(d) {
+            return color(d.data.title);
+        })
         .attr("class", "slice");
 
     // Use the transition animations to correctly position the slices
+
     slice.transition()
         .attrTween("d", function(d) {
+
             this._current = this._current || d;
             var interpolate = d3.interpolate(this._current, d);
+
+            console.log(interpolate(0));
+
             this._current = interpolate(0);
             return function(t) {
                 return arc(interpolate(t));
             }
         });
 
+    //console.log(slice.transition());
+
+    //return;
+
     slice.exit()
         .remove();
+
+    return;
 
     /* ------- TEXT LABELS -------*/
 
@@ -125,7 +137,7 @@ function createCoolerChart(data, color) {
         .text(function(d) {
             return d.data.title;
         });
-    
+
     function midAngle(d){
         return d.startAngle + (d.endAngle - d.startAngle)/2;
     }
@@ -160,7 +172,7 @@ function createCoolerChart(data, color) {
 
     var polyline = svg.select(".lines").selectAll("polyline")
         .data(pie(data), key);
-    
+
     polyline.enter()
         .append("polyline");
 
@@ -179,4 +191,4 @@ function createCoolerChart(data, color) {
 
     polyline.exit()
         .remove();
-};
+}
